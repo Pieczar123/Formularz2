@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz 1 - Igor Gorzoch</title>
+    <style>
+        @font-face {
+            font-family: 'inter18italic';
+            src: url('Inter_18pt-BlackItalic.ttf') format('truetype');
+        }
+
+        body {
+            background-image: url('zdjecie1formularz.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            font-family: 'inter18italic', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        header hr {
+            width: 30%;
+            height: 4px;
+            border: none;
+            background-color: snow;
+            margin: 10px auto 0 auto;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 40px;
+        }
+
+        .b {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .form-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .form-row input {
+            width: 220px;
+            height: 32px;
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            color: #000000;
+            font-family: 'inter18italic', sans-serif;
+            font-size: 14px;
+            padding: 0 8px;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        .form-row label {
+            font-size: 16px;
+            color: #ffffff;
+            white-space: nowrap;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        .btn-submit {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #2ecc71;
+            border: none;
+            border-radius: 6px;
+            color: #ffffff;
+            font-family: 'inter18italic', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .btn-submit:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <b>IGOR GORZOCH FORMULARZE</b>
+        <hr>
+    </header>
+
+    <div class="container">
+        <form class="b" action="#" method="post">
+            <div class="form-row">
+                <input type="text" id="imie" name="imie" 
+                       oninput="this.value = this.value.replace(/[^a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ\s]/g, '')" 
+                       required>
+                <label for="imie">Podaj swoje imię</label>
+            </div>
+
+            <div class="form-row">
+                <input type="text" id="nazwisko" name="nazwisko" 
+                       oninput="this.value = this.value.replace(/[^a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ\s]/g, '')" 
+                       required>
+                <label for="nazwisko">Podaj swoje nazwisko</label>
+            </div>
+
+            <div class="form-row">
+                <input type="date" id="data_urodzenia" name="data_urodzenia" required>
+                <label for="data_urodzenia">Podaj datę urodzin</label>
+            </div>
+
+            <div class="form-row">
+                <input type="text" id="pesel" name="pesel" maxlength="11" 
+                       oninput="this.value = this.value.replace(/[^0-9]/g, '')" 
+                       required>
+                <label for="pesel">Podaj swój pesel</label>
+            </div>
+
+            <button type="submit" class="btn-submit">Wyślij</button>
+        </form>
+    </div>
+
+</body>
+</html>

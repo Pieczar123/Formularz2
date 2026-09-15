@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz 2 - Igor Gorzoch</title>
+    <style>
+        @font-face {
+            font-family: 'inter18italic';
+            src: url('Inter_18pt-BlackItalic.ttf') format('truetype');
+        }
+
+        body {
+            background-image: url('zdjecie2formularz.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            font-family: 'inter18italic', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        header hr {
+            width: 30%;
+            height: 4px;
+            border: none;
+            background-color: snow;
+            margin: 10px auto 0 auto;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 40px;
+        }
+
+        .b {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-info {
+            color: #ffaa55;
+            font-size: 26px;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        .question-title {
+            color: #0044ff;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #0044ff;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+        }
+
+        .option-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            margin-top: 20px;
+            padding: 8px 24px;
+            background-color: #2ecc71;
+            border: none;
+            border-radius: 6px;
+            color: #ffffff;
+            font-family: 'inter18italic', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            align-self: flex-start;
+            transition: background 0.2s;
+        }
+
+        .btn-submit:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <b>IGOR GORZOCH FORMULARZE</b>
+        <hr>
+    </header>
+
+    <div class="container">
+        <form class="b" action="#" method="post">
+            <div class="main-info">Checkbox służy do wybierania wielu opcji</div>
+
+            <div class="question-title">jaką część byś nie chciał amputować</div>
+
+            <div class="options-list">
+                <label class="option-item">
+                    <input type="checkbox" name="amputacja" value="noga_lewa">
+                    nogi lewej
+                </label>
+
+                <label class="option-item">
+                    <input type="checkbox" name="amputacja" value="noga_prawa">
+                    nogi prawej
+                </label>
+
+                <label class="option-item">
+                    <input type="checkbox" name="amputacja" value="reka_lewa">
+                    ręki lewej
+                </label>
+
+                <label class="option-item">
+                    <input type="checkbox" name="amputacja" value="reka_prawa">
+                    ręki prawej
+                </label>
+            </div>
+
+            <button type="submit" class="btn-submit">Wyślij</button>
+        </form>
+    </div>
+
+</body>
+</html>
